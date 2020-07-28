@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+
+  <title>RegisteredDetails</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{%static "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"%}">
+  <style>
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <h2>Registered Members</h2>
+
+  <table id="customers">
+    <thead>
+      <tr>
+        <th>S no</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Project Domain</th>
+        <th>Project name</th>
+        <th>Phone No</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for det in obj%}
+      <tr>
+        <td>{{det.pk}}</td>
+        <td>{{det.name}}</td>
+        <td>{{det.email}}</td>
+        <td>{{det.poject_domain}}</td>
+        <td>{{det.project_name}}</td>
+        <td>{{det.phone_no}}</td>
+      </tr>
+      {%endfor%}
+
+    </tbody>
+  </table>
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        {%load staticfiles%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jk Tech:Register</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static "reg/fonts/material-icon/css/material-design-iconic-font.min.css"%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static "reg/css/style.css"%}">
+</head>
+<body>
+
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Register</h2>
+                        <form method="POST" class="register-form" id="register-form" action="{% url 'app1:register'%}">
+                          {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-book"></i></i></label>
+                                <input type="text" name="p_domain" id="p_domain" placeholder="Project Domain"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-book"></i></label>
+                                <input type="text" name="p_name" id="p_name" placeholder="Project name"/>
+                            </div>
+                            <div class="form-group">
+                                    <label for="phone"><i class="zmdi zmdi-phone"></i></label>
+                                    <input type="number" name="phone" id="phone" placeholder="Phone no"/>
+                            </div>
+                            <div class="form-group form-button">
+                                <a href=""><input type="submit" name="signup" id="signup" class="form-submit" value="submit"/></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static "reg/images/signup-image.jpg"%}" alt="sing up image"></figure>
+  <a href="{%url 'app1:home' %}"><button class="button" style="vertical-align:middle"><span>Home </span></button></a>
+  <style>
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  </style>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static "reg/vendor/jquery/jquery.min.js"%}"></script>
+    <script src="{% static "reg/js/main.js"%}"></script>
+</body>
+</html>
